@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 1 - Alapok</title>
+
+    <style>
+        #slidePanel{
+            text-align: center;
+            padding: 50px;
+            background-color: #aaa;
+            border: 1px solid black;
+            box-shadow: 3px 3px 5px black transparent;
+        }
+    </style>
+</head>
+<body>
+    <!-- Gombok -->
+    <button type="button" id="elrejto">Hide</button>
+    <button type="button" id="megjelenito">Show</button>
+    <button type="button" id="felle">Toggle</button>
+
+    <button type="button" id="fadeOut">Fade out</button>
+    <button type="button" id="fadeIn">Fade in</button>
+    <button type="button" id="fadeToggle">Fade toggle</button>
+    <button type="button" id="fadeToOut">FadeTo out</button>
+    <button type="button" id="fadeToIn">FadeTo in</button>
+
+    <button type="button" id="slideUp">Slide up</button>
+    <button type="button" id="slideDown">Slide down</button>
+    <button type="button" id="slideToggle">Slide toggle</button>
+
+    <!-- jQuery-vel animalt elemek -->
+    <p id="elrejtendoElem">Hide / Show / Toggle</p>
+
+    <div id="megjelenitendoElem1" style="background-color: red;">Fade tulajdonsagot hasznalo elem 1</div>
+    <div id="megjelenitendoElem2" style="background-color: green;">Fade tulajdonsagot hasznalo elem 2</div>
+    <div id="megjelenitendoElem3" style="background-color: blue;">Fade tulajdonsagot hasznalo elem 3</div>
+
+    <div id="slidePanel">Slide panel</div>
+
+    <script src="jquery-4.0.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            //Megjelenes ki-be kapcsolasa
+            $("#elrejto").click(function(){
+                $("#elrejtendoElem").hide();
+            });
+
+            $("#megjelenito").click(function(){
+                $("#elrejtendoElem").show();
+            });
+
+            $("#felle").click(function(){
+                $("#elrejtendoElem").toggle();
+            });
+
+            //Elotunes-megjelenites
+            $("#fadeOut").click(function(){
+                $("#megjelenitendoElem1").fadeOut();
+                $("#megjelenitendoElem2").fadeOut("slow");
+                $("#megjelenitendoElem3").fadeOut(2500);
+            });
+
+            $("#fadeIn").click(function(){
+                $("#megjelenitendoElem1").fadeIn();
+                $("#megjelenitendoElem2").fadeIn("fast");
+                $("#megjelenitendoElem3").fadeIn(2500);
+            });
+
+            $("#fadeToggle").click(function(){
+                $("#megjelenitendoElem1").fadeToggle();
+                $("#megjelenitendoElem2").fadeToggle("fast");
+                $("#megjelenitendoElem3").fadeToggle(2500);
+            });
+
+            $("#fadeToOut").click(function(){
+                $("#megjelenitendoElem1").fadeTo("slow", 0.8);
+                $("#megjelenitendoElem2").fadeTo("fast", 0.4);
+                $("#megjelenitendoElem3").fadeTo(2500, 0.2);
+            });
+
+            $("#fadeToIn").click(function(){
+                $("#megjelenitendoElem1").fadeTo("slow", 1);
+                $("#megjelenitendoElem2").fadeTo("fast", 1);
+                $("#megjelenitendoElem3").fadeTo(2500, 1);
+            });
+
+            //Slide
+            $("#slideUp").click(function(){
+                $("#slidePanel").slideUp();
+            });
+
+            $("#slideDown").click(function(){
+                $("#slidePanel").slideDown();
+            });
+
+            $("#slideToggle").click(function(){
+                $("#slidePanel").slideToggle();
+            });
+        });
+    </script>
+</body>
+</html>

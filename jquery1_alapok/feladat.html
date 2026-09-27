@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 1 - Feladat</title>
+
+    <style>
+        .menusav{
+            width: 500px;
+            margin: auto;
+        }
+
+        .fejlec{
+            background-color: rgb(58, 58, 58);
+            color: white;
+        }
+
+        .menuTartalom{
+            background-color: gray;
+        }
+
+        p, h2, ul{
+            margin: 0;
+        }
+
+        h2, p{
+            display: inline;
+        }
+
+        p{
+            float: right;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menusav">
+        <div class="fejlec">
+            <h2>Navbar</h2>
+            <p id="hamburger">☰</p>
+        </div>
+
+        <div class="menuTartalom">
+            <ul>
+                <li>Menu 1</li>
+                <li>Menu 2</li>
+                <li>Menu 3</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="jquery-4.0.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#hamburger").click(function(){
+                $(".menuTartalom").slideToggle();
+            });
+        });
+    </script>
+</body>
+</html>

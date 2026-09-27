@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 3 - Feladat</title>
+
+    <style>
+        .felkover{
+            font-weight: bold;
+        }
+
+        .dolt{
+            font-style: italic;
+        }
+
+        .alahuzott{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Keszits egy weboldalt, amin a felhasznalo ki tudja valasztani, hosz a szovegen
+            mely beallitasokat akarja alkalamazni
+        </li>
+        <ul>
+            <li>Felkover</li>
+            <li>Dolt</li>
+            <li>Alahuzott</li>
+        </ul>
+        <li>Ezeket alkalmazd egy fix paragrafuson</li>
+        <li>Akar egyszerre mind a harmat is kivalaszthatja, de mukodik egyesevel, vagy kettesevel is</li>
+    </ul>
+
+    <hr>
+
+    <form>
+        <input type="checkbox" name="felkover" id="felkover">
+        <label for="felkover">Felkover</label><br>
+
+        <input type="checkbox" name="dolt" id="dolt">
+        <label for="dolt">Dolt</label><br>
+
+        <input type="checkbox" name="alahuzott" id="alahuzott">
+        <label for="alahuzott">Alahuzott</label><br>
+
+        <button type="button" id="alkalmazas">Alkalmazas</button>
+    </form>
+
+    <p id="minta">Minta</p>
+
+    <script src="jquery-4.0.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#alkalmazas").click(function(){
+                $("#minta").removeClass();
+                
+                if($("#felkover").is(":checked")){
+                    $("#minta").addClass("felkover");
+                }
+
+                if($("#dolt").is(":checked")){
+                    $("#minta").addClass("dolt");
+                }
+
+                if($("#alahuzott").is(":checked")){
+                    $("#minta").addClass("alahuzott");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

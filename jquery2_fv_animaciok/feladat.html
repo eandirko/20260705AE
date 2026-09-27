@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 2 - Feladat</title>
+
+    <style>
+        #doboz{
+            padding: 20px;
+            text-align: center;
+            background-color: #aaa;
+            border: 1px solid black;
+            box-shadow: 3px 3px 5px black;
+            margin: 30px;
+
+            display: inline-block;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        Keszits oldalt jQuert segitsegevel, ahol helyezz el egy szurke dobozt, ami
+        gombnyomasra korbemegy a kepernyo szelen
+     -->
+
+     <button type="button" id="mozgatas">Mozgatas</button><br>
+     <div id="doboz">Doboz</div>
+
+     <script src="jquery-4.0.0.js"></script>
+     <script>
+        $(document).ready(function(){
+            $("#mozgatas").click(function(){
+                $("#doboz").animate({
+                    left: "800px"
+                });
+
+                $("#doboz").animate({
+                    top: "300px"
+                });
+
+                $("#doboz").animate({
+                    left: "0"
+                });
+
+                $("#doboz").animate({
+                    top: "0"
+                });
+            });
+        });
+     </script>
+</body>
+</html>
